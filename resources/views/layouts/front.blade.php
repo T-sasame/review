@@ -44,11 +44,10 @@
                         <ul class="navbar-nav mr-auto">
                             {{-- ログインしていない場合のみ新規登録のリンクを表示 --}}
                             @guest
-                                <a class="navbar-menu" href="{{ action('MainController@new_user') }}">新規ユーザー登録</a>
+                                <li><a class="navbar-menu" href="{{ action('MainController@new_user') }}">新規ユーザー登録</a></li>
                             @endguest
-                            <a class="navbar-menu" href="{{ action('Admin\ReviewController@mypage') }}">マイページ</a>
-                            <a class="navbar-menu" href="{{ action('Admin\ReviewController@create') }}">レビューの投稿</a>
-
+                            <li><a class="navbar-menu" href="{{ action('Admin\ReviewController@mypage') }}">マイページ</a></li>
+                            <li><a class="navbar-menu" href="{{ action('Admin\ReviewController@create') }}">レビューの投稿</a></li>
                         </ul>
 
                         <!-- Right Side Of Navbar -->
