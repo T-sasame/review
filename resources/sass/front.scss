@@ -1,0 +1,127 @@
+body {
+  background-color: #DDFFEE;
+  color: #000;
+}
+
+.website-name {
+  text-align: center;
+  h1 {
+    margin-top: 10px;
+  }
+}
+
+.navbar-laravel {
+  background-color: #65A7D6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+  color: #000;
+}
+
+.nav-link {
+  color: #000;
+}
+
+.navbar-menu {
+  color: #000;
+  margin-left: 20px;
+}
+
+.table {
+  color: #000;
+  th,td, {
+    background-color: #fff;
+    border: 1px #000 solid;
+  }
+}
+
+.genre li {
+    float: left;
+    margin-right: 10px;
+    list-style-type: none;
+}
+
+.list-group-item {
+  border-color: #fff;
+  background-color: #000;
+}
+
+.table {
+  table-layout:fixed;
+  tbody {
+    tr {
+      td {
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+.header {
+  .logo {
+      width: 120px;
+      height: 82px;
+  }
+}
+
+.posts {
+  .caption {
+    position: relative;
+    width: 300px;
+    .image {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .review-field {
+    background-color: #fff;
+    padding: 0;
+    position: relative;
+    word-wrap: break-word;
+
+    .title {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      h1 {
+        color: #fff;
+        font-size: 2em;
+        padding-left: 10px;
+      }
+    }
+    .user_name {
+      padding-left: 5px;
+      margin-bottom: 5px;
+    }
+    .genre {
+      padding-left: 5px;
+      margin-bottom: 5px;
+    }
+    .score {
+      padding-left: 5px;
+      margin-bottom: 10px;
+    }
+    .review {
+      padding-left: 5px;
+      font-size: 1.2em;
+    }
+
+    a {
+      margin-left: 5px;
+      margin-bottom: 5px;
+    }
+
+    .date {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-top: 5px;
+      p {
+        float: left;
+        margin-right: 5px;
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
