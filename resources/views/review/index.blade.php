@@ -32,6 +32,8 @@
                                     <div class="image">
                                         @if ($post->image_path)
                                             <img src="{{ $post->image_path }}">
+                                        @else
+                                            <img src="{{ asset('storage/image/no_image.png') }}">
                                         @endif
                                     </div>
                                 </div>
