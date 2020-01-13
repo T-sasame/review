@@ -31,7 +31,7 @@ class ReviewController extends Controller
           $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
           $review->image_path = Storage::disk('s3')->url($path);
         } else {
-            $review->image_path = null;
+            $review->image_path = Storage::disk('s3')->url('no_image.png');
         }
 
         //ログインしたidと名前をreviewsテーブルのuser_id,user_nameに格納する
@@ -88,7 +88,7 @@ class ReviewController extends Controller
         $review_form = $request->all();
         //画像の変更を保存、削除ならばnullにする
         if ($request->input('remove')) {
-            $review_form['image_path'] = null;
+            $review_form['image_path'] = Storage::disk('s3')->url('no_image.png');
         } elseif ($request->file('image')) {
             $path = Storage::disk('s3')->putFile('/',$review_form['image'],'public');
             $review_form['image_path'] = Storage::disk('s3')->url($path);

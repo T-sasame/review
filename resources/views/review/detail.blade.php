@@ -16,9 +16,7 @@
                         <div class="caption mx-auto">
                             <div class="image">
                                 @if ($review->image_path)
-                                    <img src="{{ $post->image_path }}">
-                                @else
-                                    <img src="{{ asset('storage/image/no_image.png') }}">
+                                    <img src="{{ $post->image_path }}">                                 
                                 @endif
                             </div>
                         </div>
