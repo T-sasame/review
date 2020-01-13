@@ -27,6 +27,7 @@ class ReviewController extends Controller
         $form = $request->all();
 
         // フォームから画像が送信されてきたら保存して、$review->image_path に画像のパスを保存する
+        // 画像なしならs3ストレージ内にあるno_image.pngをパスに保存
         if (isset($form['image'])) {
           $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
           $review->image_path = Storage::disk('s3')->url($path);
@@ -86,7 +87,7 @@ class ReviewController extends Controller
         $review = Review::find($request->id);
         //送信されてきたフォームデータを格納する
         $review_form = $request->all();
-        //画像の変更を保存、削除ならばnullにする
+        //画像の変更を保存、削除ならばno_imageを保存する
         if ($request->input('remove')) {
             $review_form['image_path'] = Storage::disk('s3')->url('no_image.png');
         } elseif ($request->file('image')) {

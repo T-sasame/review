@@ -16,7 +16,7 @@
                         <div class="caption mx-auto">
                             <div class="image">
                                 @if ($review->image_path)
-                                    <img src="{{ $post->image_path }}">                                 
+                                    <img src="{{ $review->image_path }}">                                 
                                 @endif
                             </div>
                         </div>
