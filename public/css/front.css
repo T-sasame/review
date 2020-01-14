@@ -1,6 +1,9 @@
+@charset "UTF-8";
+
 body {
-  background-color: #DDFFEE;
+  background-color: honeydew;
   color: #000;
+  font-family: 游ゴシック体, "Yu Gothic", YuGothic, "\30D2\30E9\30AE\30CE\89D2\30B4\30B7\30C3\30AF   Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF", "MS PGothic", sans-serif;
 }
 
 .website-name {
@@ -8,11 +11,17 @@ body {
 }
 
 .website-name h1 {
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   margin-top: 10px;
 }
 
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
 .navbar-laravel {
-  background-color: #65A7D6;
+  background-color: skyblue;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
@@ -31,12 +40,38 @@ body {
 
 .table {
   color: #000;
+  table-layout: fixed;
+  width: 100%;
 }
 
 .table th,
 .table td {
   background-color: #fff;
   border: 1px #000 solid;
+  word-wrap: break-word;
+}
+
+.table .my_edit {
+  text-align: center;
+  margin: 5px;
+}
+
+.style_table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.style_table th {
+  background-color: #dcdcdc;
+  border: 1px #000 solid;
+  width: 15%;
+  padding-left: 5px;
+}
+
+.style_table td {
+  border: 1px #000 solid;
+  word-wrap: break-word;
+  padding-left: 3px;
 }
 
 .genre li {
@@ -48,14 +83,6 @@ body {
 .list-group-item {
   border-color: #fff;
   background-color: #000;
-}
-
-.table {
-  table-layout: fixed;
-}
-
-.table tbody tr td {
-  word-wrap: break-word;
 }
 
 .header .logo {
@@ -70,6 +97,7 @@ body {
 
 .posts .caption .image img {
   width: 100%;
+  background-color: #fff;
 }
 
 .posts .review-field {
@@ -90,41 +118,10 @@ body {
   padding-left: 10px;
 }
 
-.posts .review-field .user_name {
-  padding-left: 5px;
-  margin-bottom: 5px;
-}
-
-.posts .review-field .genre {
-  padding-left: 5px;
-  margin-bottom: 5px;
-}
-
-.posts .review-field .score {
-  padding-left: 5px;
-  margin-bottom: 10px;
-}
-
-.posts .review-field .review {
-  padding-left: 5px;
-  font-size: 1.2em;
-}
-
-.posts .review-field a {
-  margin-left: 5px;
-  margin-bottom: 5px;
-}
-
-.posts .review-field .date {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-top: 5px;
-}
-
-.posts .review-field .date p {
-  float: left;
-  margin-right: 5px;
-  margin-bottom: 1px;
+.posts .review-field .detail_button {
+  background-color: honeydew;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 

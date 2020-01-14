@@ -13,14 +13,13 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="{{ action('Admin\ReviewController@add') }}" role="button" class="btn btn-primary">新規作成</a>
+                <a href="{{ action('Admin\ReviewController@add') }}" role="button" class="btn btn-primary">レビューの新規作成</a>
             </div>
             <div class="col-md-8">
                 <form action="{{ action('Admin\ReviewController@mypage') }}" method="get">
                     <div class="form-group row">
-                        <label class="col-md-2">タイトル名で検索→</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
+                            <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}" placeholder="検索したいタイトル名を入力して下さい">
                         </div>
                         <div class="col-md-2">
                             {{ csrf_field() }}
@@ -38,9 +37,9 @@
                             <tr>
                                 <th width="20%">タイトル</th>
                                 <th width="40%">レビュー</th>
-                                <th width="10%">ジャンル</th>
-                                <th width="10%">点数</th>
-                                <th width="10%">操作</th>
+                                <th width="12%">ジャンル</th>
+                                <th width="5%">点数</th>
+                                <th width="10%">編集</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,11 +50,11 @@
                                     <td>{{ Str::limit($review->genre, 50) }}</td>
                                     <td>{{ Str::limit($review->score, 5) }}</td>
                                     <td>
-                                        <div>
-                                            <a href="{{ action('Admin\ReviewController@edit', ['id' => $review->id]) }}">編集</a>
+                                        <div class="my_edit">
+                                            <a href="{{ action('Admin\ReviewController@edit', ['id' => $review->id]) }}" role="button" class="btn btn-primary">編集</a>
                                         </div>
-                                        <div>
-                                            <a href="{{ action('Admin\ReviewController@delete', ['id' => $review->id]) }}">削除</a>
+                                        <div class="my_edit">
+                                            <a href="{{ action('Admin\ReviewController@delete', ['id' => $review->id]) }}" role="button" class="btn btn-primary">削除</a>
                                         </div>
                                     </td>
                                 </tr>

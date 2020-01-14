@@ -16,23 +16,40 @@
                         <div class="caption mx-auto">
                             <div class="image">
                                 @if ($review->image_path)
-                                    <img src="{{ $review->image_path }}">                                 
+                                    <img src="{{ $review->image_path }}">
                                 @endif
                             </div>
                         </div>
                     </div>
                     <div class="review-field col-md-8">
-                        <div class="title">
-                            <h1>{{ $review->title }}</h1>
-                        </div>
-                        <p class="user_name mx-auto">投稿者: {{ $review->user_name }}</p>
-                        <p class="genre mx-auto">ジャンル: {{ $review->genre }}</p>
-                        <p class="score mx-auto">点数: {{ $review->score }}</p>
-                        <p class="review mx-auto">{{ $review->review }}</p>
-                        <div class="date">
-                            <p>初回投稿日: {{ $review->created_at->format('Y年m月d日') }}</p>
-                            <p>最終編集日: {{ $review->updated_at->format('Y年m月d日') }}</p>
-                        </div>
+                        <table class="style_table">
+                            <tbody>
+                                <tr>
+                                    <th>作品名</th>
+                                    <td>{{ $review->title }}</td>
+                                </tr>
+                                <tr>
+                                    <th>投稿者</th>
+                                    <td>{{ $review->user_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>ジャンル</th>
+                                    <td>{{ $review->genre }}</td>
+                                </tr>
+                                <tr>
+                                    <th>点数</th>
+                                    <td>{{ $review->score }}</td>
+                                </tr>
+                                <tr>
+                                    <th>レビュー</th>
+                                    <td>{{ $review->review }}</td>
+                                </tr>
+                                <tr>
+                                    <th>投稿日</th>
+                                    <td>初回投稿日: {{ $review->created_at->format('Y年m月d日') }} 最終編集日: {{ $review->updated_at->format('Y年m月d日') }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

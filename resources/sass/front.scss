@@ -1,17 +1,25 @@
 body {
-  background-color: #DDFFEE;
+  background-color: honeydew;
   color: #000;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro',
+               メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
 .website-name {
   text-align: center;
   h1 {
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     margin-top: 10px;
   }
 }
 
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
 .navbar-laravel {
-  background-color: #65A7D6;
+  background-color: skyblue;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
@@ -30,9 +38,32 @@ body {
 
 .table {
   color: #000;
+  table-layout:fixed;
+  width: 100%;
   th,td, {
     background-color: #fff;
     border: 1px #000 solid;
+    word-wrap: break-word;
+  }
+  .my_edit {
+    text-align: center;
+    margin: 5px;
+  }
+}
+
+.style_table {
+  table-layout:fixed;
+  width: 100%;
+  th {
+    background-color: #dcdcdc;
+    border: 1px #000 solid;
+    width: 15%;
+    padding-left: 5px;
+  }
+  td {
+    border: 1px #000 solid;
+    word-wrap: break-word;
+    padding-left: 3px;
   }
 }
 
@@ -45,17 +76,6 @@ body {
 .list-group-item {
   border-color: #fff;
   background-color: #000;
-}
-
-.table {
-  table-layout:fixed;
-  tbody {
-    tr {
-      td {
-        word-wrap: break-word;
-      }
-    }
-  }
 }
 
 .header {
@@ -72,6 +92,7 @@ body {
     .image {
       img {
         width: 100%;
+        background-color: #fff;
       }
     }
   }
@@ -90,38 +111,12 @@ body {
         padding-left: 10px;
       }
     }
-    .user_name {
-      padding-left: 5px;
-      margin-bottom: 5px;
-    }
-    .genre {
-      padding-left: 5px;
-      margin-bottom: 5px;
-    }
-    .score {
-      padding-left: 5px;
-      margin-bottom: 10px;
-    }
-    .review {
-      padding-left: 5px;
-      font-size: 1.2em;
-    }
 
-    a {
-      margin-left: 5px;
-      margin-bottom: 5px;
-    }
-
-    .date {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      margin-top: 5px;
-      p {
-        float: left;
-        margin-right: 5px;
-        margin-bottom: 1px;
-      }
+    .detail_button {
+      background-color: honeydew;
+      text-align: center;
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
   }
 }

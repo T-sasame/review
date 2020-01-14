@@ -10,10 +10,9 @@
     <div class="container">
         <form action="{{ action('MainController@index') }}" method="get">
             <div class="form-group row">
-                <h1 class="col-md-4">投稿レビュー一覧</h1>
-                <label class="col-md-2">タイトル名で検索→</label>
+                <h1 class="col-md-6" style="text-align: center">投稿レビュー一覧</h1>
                 <div class="col-md-5">
-                    <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
+                    <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}" placeholder="検索したいタイトル名を入力して下さい">
                 </div>
                 <div class="col-md-1">
                     {{ csrf_field() }}
@@ -31,30 +30,51 @@
                                 <div class="caption mx-auto">
                                     <div class="image">
                                         @if ($post->image_path)
-                                            <img src="{{ $post->image_path }}">                                         
+                                            <img src="{{ $post->image_path }}">
                                         @endif
                                     </div>
                                 </div>
                             </div>
                             <div class="review-field col-md-8">
-                                <div class="title">
-                                    <h1>{{ Str::limit($post->title, 100) }}</h1>
-                                </div>
-                                <p class="user_name mx-auto">投稿者: {{ Str::limit($post->user_name, 100) }}</p>
-                                <p class="genre mx-auto">ジャンル: {{ Str::limit($post->genre, 50) }}</p>
-                                <p class="score mx-auto">点数: {{ Str::limit($post->score, 5) }}</p>
-                                <p class="review mx-auto">{{ Str::limit($post->review, 1000) }}</p>
+                                <table class="style_table">
+                                    <tbody>
+                                        <tr>
+                                            <th>作品名</th>
+                                            <td>{{ Str::limit($post->title, 100) }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>投稿者</th>
+                                            <td>{{ Str::limit($post->user_name, 100) }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>ジャンル</th>
+                                            <td>{{ $post->genre }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>点数</th>
+                                            <td>{{ $post->score }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th height="168px">レビュー</th>
+                                            <td>{{ Str::limit($post->review, 1000) }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>投稿日</th>
+                                            <td>初回投稿日: {{ $post->created_at->format('Y年m月d日') }} 最終編集日: {{ $post->updated_at->format('Y年m月d日') }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
                                 {{-- 文字数制限に引っ掛かった場合は、詳細ページのリンクを表示 --}}
                                 @if ( mb_strlen($post->title) > 50 || mb_strlen($post->review) > 500)
-                                    <a href="{{ action('MainController@detail', ['id' => $post->id]) }}" role="button" class="btn btn-primary">詳細ページへ</a>
+                                    <div class="detail_button">
+                                        <a href="{{ action('MainController@detail', ['id' => $post->id]) }}" role="button" class="btn btn-primary">詳細ページへ</a>
+                                    </div>
                                 @elseif ( strlen($post->title) > 100 || strlen($post->review) > 1000)
-                                    <a href="{{ action('MainController@detail', ['id' => $post->id]) }}" role="button" class="btn btn-primary">詳細ページへ</a>
+                                    <div class="detail_button">
+                                        <a href="{{ action('MainController@detail', ['id' => $post->id]) }}" role="button" class="btn btn-primary">詳細ページへ</a>
+                                    </div>
                                 @endif
-                                <div class="date">
-                                    <p>初回投稿日: {{ $post->created_at->format('Y年m月d日') }}</p>
-                                    <p>最終編集日: {{ $post->updated_at->format('Y年m月d日') }}</p>
-                                </div>
                             </div>
                         </div>
                     </div>
