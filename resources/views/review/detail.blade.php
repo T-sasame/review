@@ -37,6 +37,10 @@
                                     <td>{{ $review->genre }}</td>
                                 </tr>
                                 <tr>
+                                    <th>ハード</th>
+                                    <td>{{ $review->hard }}</td>
+                                </tr>
+                                <tr>
                                     <th>点数</th>
                                     <td>{{ $review->score }}</td>
                                 </tr>

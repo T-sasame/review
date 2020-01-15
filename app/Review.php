@@ -13,5 +13,6 @@ class Review extends Model
         'genre' => 'required',
         'score' => 'required',
         'review' => 'required',
+        'hard' => 'required',
     );
 }

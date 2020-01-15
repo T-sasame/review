@@ -55,12 +55,11 @@
                             </div>
                         </div>
 
-                        <p style="text-align:center">確認の為、上記のパスワードを再入力してください</p>
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('messages.Confirm Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="確認の為パスワードを再入力して下さい">
                             </div>
                         </div>
 

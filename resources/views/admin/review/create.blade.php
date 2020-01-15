@@ -41,6 +41,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2" for="title">ハード</label>
+                        <div class="col-md-10">
+                            <ul class="hard">
+                                <li><input type="radio" name="hard" value='PS4/PS3' {{ old('hard') == 'PS4/PS3' ? 'checked' : '' }}>PS4/PS3</li>
+                                <li><input type="radio" name="hard" value='Nintendo Switch' {{ old('hard') == 'Nintendo Switch' ? 'checked' : '' }}>Nintendo Switch</li>
+                                <li><input type="radio" name="hard" value='Xbox One/360' {{ old('hard') == 'Xbox One/360' ? 'checked' : '' }}>Xbox One/360</li>
+                                <li><input type="radio" name="hard" value='PS Vita/PSP' {{ old('hard') == 'PS Vita/PSP' ? 'checked' : '' }}>PS Vita/PSP</li>
+                                <li><input type="radio" name="hard" value='Nintendo 3DS/DS' {{ old('hard') == 'Nintendo 3DS/DS' ? 'checked' : '' }}>Nintendo 3DS/DS</li>
+                                <li><input type="radio" name="hard" value='PC' {{ old('hard') == 'PC' ? 'checked' : '' }}>PC</li>
+                                <li><input type="radio" name="hard" value='スマホ' {{ old('hard') == 'スマホ' ? 'checked' : '' }}>スマホ</li>
+                                <li><input type="radio" name="hard" value='その他' {{ old('hard') == 'その他' ? 'checked' : '' }}>その他</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2" for="title">点数</label>
                         <div class="col-md-10">
                             <input type="number" name="score" min="0" max="100" value="{{ old('score') }}">　※半角数字の0~100で入力してください

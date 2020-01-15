@@ -51,11 +51,15 @@
                                             <td>{{ $post->genre }}</td>
                                         </tr>
                                         <tr>
+                                            <th>ハード</th>
+                                            <td>{{ $post->hard }}</td>
+                                        </tr>
+                                        <tr>
                                             <th>点数</th>
                                             <td>{{ $post->score }}</td>
                                         </tr>
                                         <tr>
-                                            <th height="168px">レビュー</th>
+                                            <th height="142px">レビュー</th>
                                             <td>{{ Str::limit($post->review, 1000) }}</td>
                                         </tr>
                                         <tr>
@@ -83,7 +87,7 @@
             @endforeach
         {{-- laravelのページネーションを使用して、ページ分割をしている --}}
         {{-- appends(request()->input()) を追記することで、2ページ目以降にもパラメータを渡している --}}
-        
+
         {{ $posts->appends(request()->input())->links() }}
         @endif
     </div>

@@ -15,7 +15,7 @@ class MainController extends Controller
         //LIKEを使用することで、部分検索が可能
         //paginateメソッドを使用して、自動でページを分割する
         if ($cond_title != '') {
-            $posts = Review::where('title', 'LIKE', "%{$cond_title}%")->orderBy('score', 'desc')->paginate(3);
+            $posts = Review::where('title', 'LIKE', "%{$cond_title}%")->orderBy('created_at', 'desc')->paginate(3);
         } else {
             //表示のソートがされた場合は$sortにリクエストを格納
             $sort = $request->sort;
@@ -30,7 +30,7 @@ class MainController extends Controller
                     $posts = Review::orderBy('score', 'asc')->paginate(3);
                     break;
                 default:
-                    $posts = Review::orderBy('score', 'desc')->paginate(3);
+                    $posts = Review::orderBy('created_at', 'desc')->paginate(3);
             }
         }
 
