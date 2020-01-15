@@ -82,7 +82,9 @@
                 <hr color="#c0c0c0">
             @endforeach
         {{-- laravelのページネーションを使用して、ページ分割をしている --}}
-        {{ $posts->links() }}
+        {{-- appends(request()->input()) を追記することで、2ページ目以降にもパラメータを渡している --}}
+        
+        {{ $posts->appends(request()->input())->links() }}
         @endif
     </div>
 @endsection

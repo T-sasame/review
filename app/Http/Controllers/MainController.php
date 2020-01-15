@@ -17,7 +17,21 @@ class MainController extends Controller
         if ($cond_title != '') {
             $posts = Review::where('title', 'LIKE', "%{$cond_title}%")->orderBy('score', 'desc')->paginate(3);
         } else {
-            $posts = Review::orderBy('score', 'desc')->paginate(3);
+            //表示のソートがされた場合は$sortにリクエストを格納
+            $sort = $request->sort;
+            switch ($sort) {
+                case 'new':
+                    $posts = Review::orderBy('created_at', 'desc')->paginate(3);
+                    break;
+                case 'desc':
+                    $posts = Review::orderBy('score', 'desc')->paginate(3);
+                    break;
+                case 'asc':
+                    $posts = Review::orderBy('score', 'asc')->paginate(3);
+                    break;
+                default:
+                    $posts = Review::orderBy('score', 'desc')->paginate(3);
+            }
         }
 
         //review/index.blade.php ファイルを渡している

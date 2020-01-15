@@ -46,8 +46,18 @@
                             @guest
                                 <li><a class="navbar-menu" href="{{ action('MainController@new_user') }}">新規ユーザー登録</a></li>
                             @endguest
-                            <li><a class="navbar-menu" href="{{ action('Admin\ReviewController@mypage') }}">マイページ</a></li>
-                            <li><a class="navbar-menu" href="{{ action('Admin\ReviewController@create') }}">レビューの投稿</a></li>
+
+                            {{-- 表示をソートする為のドロップダウンメニュー --}}
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    表示のソート <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ action('MainController@index', ['sort' => 'new']) }}">新着順</a>
+                                    <a class="dropdown-item" href="{{ action('MainController@index', ['sort' => 'desc']) }}">評価の高い順</a>
+                                    <a class="dropdown-item" href="{{ action('MainController@index', ['sort' => 'asc']) }}">評価の低い順</a>
+                                </div>
+                            </li>
                         </ul>
 
                         <!-- Right Side Of Navbar -->
@@ -56,7 +66,7 @@
                             {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                             @guest
                                 <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
-                            {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+                            {{-- ログインしていたらユーザー名を表示、ユーザー名のドロップダウンでユーザーメニュー、ログアウトボタンを表示 --}}
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -64,6 +74,9 @@
                                     </a>
 
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ action('Admin\ReviewController@mypage') }}">マイページ</a>
+                                        <a class="dropdown-item" href="{{ action('Admin\ReviewController@create') }}">レビューの投稿</a>
+
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
