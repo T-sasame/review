@@ -33,11 +33,6 @@ body {
   color: #000;
 }
 
-.navbar-menu {
-  color: #000;
-  margin-left: 20px;
-}
-
 .table {
   color: #000;
   table-layout: fixed;
@@ -105,17 +100,6 @@ body {
   padding: 0;
   position: relative;
   word-wrap: break-word;
-}
-
-.posts .review-field .title {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.posts .review-field .title h1 {
-  color: #fff;
-  font-size: 2em;
-  padding-left: 10px;
 }
 
 .posts .review-field .detail_button {

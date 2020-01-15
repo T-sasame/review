@@ -44,7 +44,7 @@
                         <ul class="navbar-nav mr-auto">
                             {{-- ログインしていない場合のみ新規登録のリンクを表示 --}}
                             @guest
-                                <li><a class="navbar-menu" href="{{ action('MainController@new_user') }}">新規ユーザー登録</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ action('MainController@new_user') }}">新規ユーザー登録</a></li>
                             @endguest
 
                             {{-- 表示をソートする為のドロップダウンメニュー --}}
