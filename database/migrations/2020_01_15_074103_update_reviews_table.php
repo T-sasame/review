@@ -14,7 +14,7 @@ class UpdateReviewsTable extends Migration
     public function up()
     {
         Schema::table('reviews', function (Blueprint $table) {
-            $table->string('hard');
+            $table->string('hard')->nullable();
         });
     }
 
