@@ -35,18 +35,18 @@
                     <table class="table" border="2" >
                         <thead>
                             <tr>
-                                <th width="15%">タイトル</th>
-                                <th width="25%">レビュー</th>
-                                <th width="10%">ジャンル</th>
-                                <th width="12%">ハード</th>
-                                <th width="5%">点数</th>
+                                <th width="14%">タイトル</th>
+                                <th width="23%">レビュー</th>
+                                <th width="11%">ジャンル</th>
+                                <th width="11%">ハード</th>
+                                <th width="6%">点数</th>
                                 <th width="12%">編集</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $review)
                                 <tr>
-                                    <td>{{ Str::limit($review->title, 100) }}</td>
+                                    <td>{{ Str::limit($review->title, 70) }}</td>
                                     <td>{{ Str::limit($review->review, 150) }}</td>
                                     <td>{{ Str::limit($review->genre, 50) }}</td>
                                     <td>{{ Str::limit($review->hard, 50) }}</td>
