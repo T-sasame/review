@@ -49457,6 +49457,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./review */ "./resources/js/review.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49592,6 +49594,67 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/review.js":
+/*!********************************!*\
+  !*** ./resources/js/review.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function ($, window) {
+  $(function () {
+    $("#rev_title").focusout(function () {
+      var title = $("#rev_title").val();
+
+      if (title == '') {
+        $("#error_title").text("タイトルを入力してください");
+      } else {
+        $("#error_title").text('');
+      }
+    });
+
+    if (!$("input[name='genre']").is(':checked')) {
+      $("#error_genre").text("ジャンルを入力してください");
+    }
+
+    $("input[name='genre']").focusout(function () {
+      if ($("input[name='genre']").is(':checked')) {
+        $("#error_genre").text('');
+      }
+    });
+
+    if (!$("input[name='hard']").is(':checked')) {
+      $("#error_hard").text("ハードを入力してください");
+    }
+
+    $("input[name='hard']").focusout(function () {
+      if ($("input[name='hard']").is(':checked')) {
+        $("#error_hard").text('');
+      }
+    });
+    $("#rev_score").focusout(function () {
+      var score = $("#rev_score").val();
+
+      if (score == '') {
+        $("#error_score").text("半角数字の0~100で入力してください");
+      } else {
+        $("#error_score").text('');
+      }
+    });
+    $("#rev_review").focusout(function () {
+      var review = $("#rev_review").val();
+
+      if (review == '') {
+        $("#error_review").text("レビューを入力してください");
+      } else {
+        $("#error_review").text('');
+      }
+    });
+  });
+})(jQuery, window);
 
 /***/ }),
 
