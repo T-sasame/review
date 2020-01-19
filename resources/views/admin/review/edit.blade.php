@@ -63,15 +63,16 @@
                         <label class="col-md-2" for="title">点数<span style="color: gray;">(必須)</span></label>
                         <div class="col-md-10">
                             <input type="number" name="score" min="0" max="100" value="{{ $review_form->score }}" id="rev_score">
+                            半角数字で入力してください
                             <div id="error_score" style="color: red;"></div>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="rev_error col-md-12" id="error_review"></div>
                         <label class="col-md-2" for="review">レビュー<span style="color: gray;">(必須)</span></label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="review" rows="15" id="rev_review">{{ $review_form->review }}</textarea>
                         </div>
+                        <div class="rev_error col-md-12" id="error_review"></div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="image">画像の投稿</label>

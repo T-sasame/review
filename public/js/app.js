@@ -49620,7 +49620,7 @@ __webpack_require__.r(__webpack_exports__);
       $("#error_genre").text("ジャンルを入力してください");
     }
 
-    $("input[name='genre']").focusout(function () {
+    $("input[name='genre']").on('change', function () {
       if ($("input[name='genre']").is(':checked')) {
         $("#error_genre").text('');
       }
@@ -49630,7 +49630,7 @@ __webpack_require__.r(__webpack_exports__);
       $("#error_hard").text("ハードを入力してください");
     }
 
-    $("input[name='hard']").focusout(function () {
+    $("input[name='hard']").on('change', function () {
       if ($("input[name='hard']").is(':checked')) {
         $("#error_hard").text('');
       }
@@ -49639,7 +49639,7 @@ __webpack_require__.r(__webpack_exports__);
       var score = $("#rev_score").val();
 
       if (score == '') {
-        $("#error_score").text("半角数字の0~100で入力してください");
+        $("#error_score").text("0~100で入力してください");
       } else {
         $("#error_score").text('');
       }
